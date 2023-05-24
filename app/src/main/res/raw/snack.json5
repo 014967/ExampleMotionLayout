@@ -1,0 +1,108 @@
+{
+  ConstraintSets: {
+    start: {
+      background: {
+        width: "spread",
+        height: "spread",
+        top: ['parent', 'top', 0],
+        start : ['parent', 'start', 0],
+        end : ['parent', 'end', 0],
+        bottom : ['parent','bottom',0]
+      },
+      colorBackground : {
+        width : 'spread',
+        height : 200,
+        start: ['parent', 'start', 0],
+        top: ['parent', 'top', 0],
+        end: ['parent', 'end', 0],
+      },
+      circleImage : {
+        width: 'spread',
+        height : 'wrap',
+        start: ['parent', 'start', 20],
+        end : ['parent', 'end',20],
+        top :  ['colorBackground', 'top', 20],
+      },
+      title : {
+        width: 'wrap',
+        height: 'wrap',
+        start: ['parent', 'start', 20],
+        top: ['circleImage', 'bottom',10],
+      },
+      price : {
+        width : 'wrap',
+        height : 'wrap',
+        start: ['parent', 'start', 20],
+        top: ['title', 'bottom', 20],
+      },
+      text : {
+        width : 'spread',
+        height : 'spread',
+        top: ['price', 'bottom', 20],
+        start: ['parent', 'start', 20],
+        end: ['parent', 'end', 20],
+        bottom: ['parent', 'bottom', 0],
+        custom : {
+          scrollable : 0
+        }
+      },
+    },
+    end: {
+      background: {
+        width: 'spread',
+        height: 'spread',
+        start : ['parent', 'start', 0],
+        top: ['parent', 'top', 0],
+        end : ['parent', 'end', 0],
+      },
+      colorBackground : {
+        width : 'spread',
+        height : 50,
+        start: ['parent', 'start', 0],
+        top: ['parent', 'top', 0],
+        end: ['parent', 'end', 0],
+      },
+      circleImage : {
+        width: 100,
+        height : 100,
+        top : ['colorBackground','top', 10],
+        end : ['colorBackground', 'end',20]
+      },
+      title : {
+        width: 'wrap',
+        height: 'wrap',
+        start: ['parent', 'start', 20],
+        top: ['colorBackground', 'bottom',10],
+      },
+      price : {
+        width : 'wrap',
+        height : 'wrap',
+        start: ['parent', 'start', 20],
+        top: ['title', 'bottom', 20],
+      },
+      text : {
+        width : 'spread',
+        height : 'spread',
+        top: ['price', 'bottom', 20],
+        start: ['parent', 'start', 20],
+        end: ['parent', 'end', 20],
+        bottom: ['parent', 'bottom', 0],
+        custom : {
+          scrollable : 200
+        }
+      },
+    }
+  },
+  Transitions : {
+    default: {
+      from : 'start',
+      to : 'end',
+      onSwipe : {
+        anchor : 'background',
+        direction : 'up',
+        side : 'bottom'
+      },
+      mode : 'spring',
+    }
+  }
+}
